@@ -644,31 +644,34 @@ class ChatState extends State<Chat> {
                                     BuildContext context,
                                     BoxConstraints constraints,
                                   ) =>
-                                      ChatList(
-                                    bottomWidget: widget.listBottomWidget,
-                                    bubbleRtlAlignment:
-                                        widget.bubbleRtlAlignment!,
-                                    isLastPage: widget.isLastPage,
-                                    itemBuilder: (Object item, int? index) =>
-                                        _messageBuilder(
-                                      item,
-                                      constraints,
-                                      index,
-                                    ),
-                                    items: _chatMessages,
-                                    keyboardDismissBehavior:
-                                        widget.keyboardDismissBehavior,
-                                    onEndReached: widget.onEndReached,
-                                    onEndReachedThreshold:
-                                        widget.onEndReachedThreshold,
-                                    scrollController: _scrollController,
-                                    scrollPhysics: widget.scrollPhysics,
-                                    typingIndicatorOptions:
-                                        widget.typingIndicatorOptions,
-                                    useTopSafeAreaInset:
-                                        widget.useTopSafeAreaInset ?? isMobile,
+                                      Align(
+                                        alignment: Alignment.topCenter,
+                                        child: ChatList(
+                                          bottomWidget: widget.listBottomWidget,
+                                          bubbleRtlAlignment:
+                                          widget.bubbleRtlAlignment!,
+                                          isLastPage: widget.isLastPage,
+                                          itemBuilder: (Object item, int? index) =>
+                                              _messageBuilder(
+                                                item,
+                                                constraints,
+                                                index,
+                                              ),
+                                          items: _chatMessages,
+                                          keyboardDismissBehavior:
+                                          widget.keyboardDismissBehavior,
+                                          onEndReached: widget.onEndReached,
+                                          onEndReachedThreshold:
+                                          widget.onEndReachedThreshold,
+                                          scrollController: _scrollController,
+                                          scrollPhysics: widget.scrollPhysics,
+                                          typingIndicatorOptions:
+                                          widget.typingIndicatorOptions,
+                                          useTopSafeAreaInset:
+                                          widget.useTopSafeAreaInset ?? isMobile,
                                           stickyOnTopItemCount: widget.stickyOnTopItemCount,
-                                  ),
+                                        ),
+                                      ),
                                 ),
                               ),
                       ),
